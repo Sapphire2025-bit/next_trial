@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const links = [{href:"/pages/login", text:"login"},
   {href:"/pages/home", text:"home"},
   {href:"/pages/cards", text:"all cards"},
-  {href:"/pages/cards/1", text:"first card"}
+  {href:"/pages/todo", text:"to do"}
 ]
 
 export default function RootLayout({
