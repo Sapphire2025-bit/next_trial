@@ -1,16 +1,14 @@
 import React from 'react'
 import Card from '@/app/components/Card'
+import getAll from '@/app/apiCalls/getAll'
+import DummyData from '@/app/types/dummyData';
 
-const cards = [{name: "Yossi", pic: "/images/green_face.png"},
-  {name: "Motti", pic: "/images/purple_face.png"},
-  {name: "Motti2", pic: "/images/purple_face.png"},
-  {name: "Motti3", pic: "/images/purple_face.png"}]
-
-function allCards() {
+async function allCards() {
+  const data = await getAll();
   return (
     <div className="grid grid-cols-3">
-      {cards.map((info, id) => 
-        <Card key={id} name={info.name} pic={info.pic} href={`/pages/cards/${id}`} text="show more ->"/>
+      {data.map((info: DummyData) => 
+        <Card key={info.id} name={info.firstName + " " + info.lastName} pic={info.image} href={`/pages/cards/${info.id}`} text="show more ->"/>
       )}
     </div>
   )
