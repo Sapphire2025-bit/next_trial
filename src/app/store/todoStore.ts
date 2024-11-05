@@ -18,6 +18,11 @@ const useTodoStore = create<TodoStoreProp>((set) => ({
     set((state) => ({
       todos: state.todos.filter((todo) => todo.id !== id),
     })),
+
+  updateTodo: (id: number, text: string) =>
+    set((state) => ({
+      todos: state.todos.map((todo) => todo.id == id ? {id, text} : todo),
+    })),
 }));
 
 export default useTodoStore;
