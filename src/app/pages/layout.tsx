@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import NavBar from '@/app/components/NavBar';
-import Footer from '@/app/components/Footer';
 
 export const metadata: Metadata = {
   title: "Create Next App",
